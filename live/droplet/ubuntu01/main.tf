@@ -40,9 +40,10 @@ resource "digitalocean_droplet" "droplet" {
   user_data = templatefile(
     "${path.module}/cloud-init.yaml",
     {
-      user_name    = var.user
-      user_passwd  = random_password.passwd.bcrypt_hash
-      user_ssh_key = tls_private_key.ssh_key.public_key_openssh
+      user_name          = var.user
+      user_passwd        = random_password.passwd.bcrypt_hash
+      user_ssh_key       = tls_private_key.ssh_key.public_key_openssh
+      tailscale_auth_key = var.tailscale_auth_key
     }
   )
 }

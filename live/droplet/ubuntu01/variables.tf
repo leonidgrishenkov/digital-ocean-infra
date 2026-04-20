@@ -13,3 +13,7 @@ variable "do_token" {
   description = "Digital Ocean PAT"
 }
 
+variable "tailscale_auth_key" {
+  type = string
+}
+

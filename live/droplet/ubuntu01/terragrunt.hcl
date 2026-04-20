@@ -7,7 +7,8 @@ terraform {
 }
 
 inputs = {
-  name = "ubuntu01"
-  user = "main"
+  name               = "ubuntu01"
+  user               = "main"
+  tailscale_auth_key = get_env("TAILSCALE_AUTH_KEY")
 }
 
